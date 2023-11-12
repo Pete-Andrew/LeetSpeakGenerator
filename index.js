@@ -13,10 +13,10 @@ formID.addEventListener('submit', e => {
     });   
 
 // gets the string from the sentance input box
-function stringFunc() {
- 
+function stringFunc(inputString) {
+  
   inputString = document.getElementById("sentance").value;
-
+  
   //checks to see if anything has been entered. 
   if (inputString == "") {
     console.log("You crazy fool! You entered no text! please enter some text."); 
@@ -24,13 +24,21 @@ function stringFunc() {
     alert("You crazy fool! You entered no text! please enter some text");
     }
 
+    // Reset arrays before each function call
+    outputString = [];
+    upperCase = [];
+    lowerCase = [];
+
   //checks which tick boxes have been selected and runs the relevant function.
-  if (e2.checked) { eToEuro(inputString) }
-  if (uToU.checked) { uToUmlaut(inputString) }
-  if (oToO.checked) { oToOstrikeThrough(inputString)}
-  if (s.checked) { sToDollar(inputString)}
-  if (i.checked) {iToExclamation(inputString)}
-  if (caps.checked) { toUpperCase(inputString)}
+  //{inputString = func(inputString)}, this part of the code is needed to update the inputString variable in the 'stringFunc' function.
+  //without this the inputString in the 'stringFunc' will not update and each consecutive function will use the original inputString. 
+  if (e2.checked) {inputString = eToEuro(inputString) }
+  if (uToU.checked) {inputString = uToUmlaut(inputString) }
+  if (oToO.checked) {inputString = oToOstrikeThrough(inputString)}
+  if (s.checked) {inputString = sToDollar(inputString)}
+  if (i.checked) {inputString = iToExclamation(inputString)}
+  if (caps.checked) {inputString = toUpperCase(inputString)}
+  
   // if (e.checked && !e2.checked) {eToThree(inputString)}
   
   printString(inputString);
@@ -70,8 +78,8 @@ return inputString;
 }
 
 function eToEuro (inputString) {
-  inputString = inputString.replaceAll("e", "€")
   
+  inputString = inputString.replaceAll("e", "€")
   console.log(inputString);
   return inputString;  
 }
