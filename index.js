@@ -8,8 +8,7 @@ var inputString = "";
 
 formID.addEventListener('submit', e => {
       e.preventDefault();     
-      //text.innerHTML = 'clicked';
-      
+      //text.innerHTML = 'clicked';  
     });   
 
 // gets the string from the sentance input box
@@ -24,7 +23,7 @@ function stringFunc(inputString) {
     alert("You crazy fool! You entered no text! please enter some text");
     }
 
-    // Reset arrays before each function call
+    // Reset arrays before each function call. 
     outputString = [];
     upperCase = [];
     lowerCase = [];
@@ -44,7 +43,6 @@ function stringFunc(inputString) {
   printString(inputString);
   //return inputString;
   }
-
 
 //goes thought the string and makes every other letter CAPITAL
 //it pushes these CAP and lower case letters to two arrays lowerCase and UpperCase
@@ -78,39 +76,32 @@ return inputString;
 }
 
 function eToEuro (inputString) {
-  
   inputString = inputString.replaceAll("e", "€")
-  console.log(inputString);
   return inputString;  
 }
 
 function uToUmlaut (inputString) {
   inputString = inputString.replaceAll("u", "ü")
-  console.log(inputString);
   return inputString;  
 }
 
 function oToOstrikeThrough (inputString) {
   inputString = inputString.replaceAll("o", "ø")
-  console.log(inputString);
   return inputString;  
 }
 
 function sToDollar (inputString) { 
 	inputString = inputString.replaceAll("s", "$")
-  console.log(inputString);
   return inputString;
 } 
 
 function iToExclamation (inputString) {
   inputString = inputString.replaceAll("i", "!")
-  console.log(inputString);
   return inputString;
 }
 
 function eToThree (inputString) {
   inputString = inputString.replaceAll("e", "3")
-  console.log(inputString);
   return inputString;
 }
 
